@@ -72,7 +72,7 @@ gulp.task('browser-sync', () => {
   });
 });
 
-const build = gulp.series('sass', 'php', 'scripts', 'imageMin', 'browser-sync');
+const build = gulp.series('sass', 'scripts', 'imageMin', 'php', 'browser-sync');
 
 gulp.task('default', gulp.parallel(build, gulp.series(gulp.parallel('browser-sync', 'watch'))));
 gulp.task('prod', gulp.parallel(build));
