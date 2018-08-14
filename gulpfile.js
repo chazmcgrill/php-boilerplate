@@ -44,7 +44,10 @@ gulp.task('scripts', () => {
 
 gulp.task('image-min', () => {
   return gulp.src(paths.img.src)
-    .pipe(plugs.imagemin([plugs.imagemin.jpegtran({ progressive: true })]))
+    .pipe(plugs.imagemin([
+      plugs.imagemin.jpegtran({ progressive: true }),
+      plugs.imagemin.optipng({ optimizationLevel: 5 })
+    ]))
     .pipe(gulp.dest(paths.img.dist))
 });
 
