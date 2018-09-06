@@ -59,7 +59,11 @@ gulp.task('php', () => {
 // -- MAIN TASKS
 
 gulp.task('browser-sync', () => {
-  php.server({ port: 8080, base: './dist', debug: false }, function() {
+  php.server({ 
+    port: 8080, 
+    base: './dist', 
+    debug: false 
+  }, function() {
     browserSync.init({
       proxy: '127.0.0.1:8080/'
     });
